@@ -1,0 +1,17 @@
+streamlit
+altair
+numpy
+pandas
+streamlit
+snowflake-connector-python
+snowflake-connector-python 
+requests 
+boto3 
+s3fs
+st-files-connection
+openai
+streamlit_chat
+langchain
+streamlit_pills
+transformers
+
