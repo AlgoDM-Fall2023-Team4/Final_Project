@@ -5,6 +5,8 @@ import pandas as pd
 import os
 from PIL import Image
 import torch
+from io import BytesIO
+from google.cloud import storage
 import clip
 import time
 from langchain import LLMChain, OpenAI
@@ -35,7 +37,7 @@ def display_images(token: str):
         start_time = start_timer()
         st.session_state.start_time = start_time
 
-    df = pd.read_csv('imagesinfo.csv')
+    df = pd.read_csv('./data/imagesinfo.csv')
 
     df['filename_numeric'] = df['filename'].str.replace('.jpg', '').astype(int)
     df = df.sort_values(by="filename_numeric")
@@ -48,9 +50,10 @@ def display_images(token: str):
     s = st.session_state.selected_image
     # st.write(s)
     filename = os.path.basename(s)
-    st.write(filename)
+    image = load_image_from_gcs('finalproject_images', s)
+    # st.write(filename)
 
-    st.image(st.session_state.selected_image, width=800)
+    st.image(image, width=800)
     st.write(":blue[Artist Name :] ", df_cleaned[df_cleaned["filename"] == filename]['artist'].iloc[0])
     st.write(":blue[Title :] ", df_cleaned[df_cleaned["filename"] == filename]['title'].iloc[0])
     st.write(":blue[Genre :] ", df_cleaned[df_cleaned["filename"] == filename]['genre'].iloc[0])
@@ -58,16 +61,15 @@ def display_images(token: str):
     st.write(":blue[Style :] ", df_cleaned[df_cleaned["filename"] == filename]['style'].iloc[0])
 
     with st.expander('Similar Images:'):
-
-        image = Image.open(st.session_state.selected_image)
         image_embeddings = compute_clip_features(image)
         image_embeddings_list = image_embeddings.tolist()
         try:
             response = requests.post( f'{PREFIX}/get_closest_images/', json={"embeddings": image_embeddings_list, "num": 5})
             similar_images = []
             for i in response.json():
-                current_path = '/Users/pranitha/Desktop/AlgoDM/FinalProject/images/data/' + i + '.jpg'
-                similar_images.append(current_path)
+                # current_path = '/Users/pranitha/Desktop/AlgoDM/FinalProject/images/data/' + i + '.jpg'
+                image = load_image_from_gcs('finalproject_images', i + '.jpg')
+                similar_images.append(image)
             k=1
             for col in st.columns(4):
                 col.image(similar_images[k])
@@ -185,6 +187,17 @@ def compute_clip_features(image):
         images_features /= images_features.norm(dim=-1, keepdim=True)
 
     return images_features
+
+def load_image_from_gcs(bucket_name, object_name):
+    storage_client = storage.Client()
+    bucket = storage_client.bucket(bucket_name)
+    blob = bucket.blob(object_name)
+
+    image_bytes = blob.download_as_bytes()
+
+    image = Image.open(BytesIO(image_bytes))
+
+    return image
 
 def start_timer():
     return time.time()

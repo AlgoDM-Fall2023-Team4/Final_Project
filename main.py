@@ -6,10 +6,10 @@ from dashboard.home import home
 from dashboard.display_image import display_images
 
 # TODO: 1. search bar
-# TODO: 2. similar items using CLIP
-# TODO: 3: Chatbot
+# TODO: 2. similar items using CLIP - done
+# TODO: 3: Chatbot - done
 
-df = pd.read_csv('imagesinfo.csv')
+df = pd.read_csv('data/imagesinfo.csv')
 
 df['filename_numeric'] = df['filename'].str.replace('.jpg', '').astype(int)
 df = df.sort_values(by = "filename_numeric")
