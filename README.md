@@ -22,7 +22,6 @@
   - [Architecture Diagram 🏗](#architecture-diagram)
   - [Project Structure 🗃️](#project-structure)
   - [Project Components 💽](#project-components)
-  - [Application 📸](#application)
   - [How to run the application 💻](#how-to-run-the-application-locally)
 ----- 
 
@@ -59,6 +58,9 @@ Art appreciation is a subjective experience, and individuals often seek personal
   │   └── display_images.py           # code to display user selected image, similar images and chatbot
   ├── fastapi
   │   └── repository.py               # application code for Fastapi
+  ├── data
+  │   ├── Pinecone_Embeddings.ipynb   # notebook to generate embeddings for images and add it to Pinecone Db
+  │   └── imagesinfo.csv              # data csv
   ├── main.py                         # code for streamlit application (Sign up, Sign in, Logout)
   └── requirements.txt                # libraries required to build the application
 ```
