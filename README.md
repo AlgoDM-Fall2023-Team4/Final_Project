@@ -102,14 +102,19 @@ Employed FastAPI as the backend framework to ensure efficient and high-performan
 
 ## Application
 
+### Sign up
 ![Sign up](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/assets/Screenshot%202023-12-14%20at%2012.50.05%20PM.png)
 
+### Sign in
 ![Sign in](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/assets/Screenshot%202023-12-14%20at%2012.50.24%20PM.png)
 
-![](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/assets/full%20screen.mp4)
+### Home Page
+![](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/assets/ezgif-4-6a3a7c5308.gif)
 
+### Display Image
 ![Display Image](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/assets/Screenshot%202023-12-14%20at%2012.57.46%20PM.png)
 
+### Chatbot
 ![Chatbot](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/assets/Screenshot%202023-12-14%20at%2012.59.37%20PM.png)
 
 
