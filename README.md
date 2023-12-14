@@ -20,7 +20,7 @@
   - [Motivation 🎯](#motivation)
   - [Technical Abstract 📝](#technical-abstract)
   - [Architecture Diagram 🏗](#architecture-diagram)
-  - [Repository Components 🗃️](#repository-components)
+  - [Project Structure 🗃️](#project-structure)
   - [Project Components 💽](#project-components)
   - [Application 📸](#application)
   - [How to run the application 💻](#how-to-run-the-application-locally)
@@ -46,7 +46,7 @@ Art appreciation is a subjective experience, and individuals often seek personal
 
 ![art style recommendation](https://github.com/AlgoDM-Fall2023-Team4/Final_Project/blob/pranitha_dev/architecture_diagram/arts_recommendation_system.png)
 
-## Repository Components
+## Project Structure
 
 ```
   ├── assets           # images used for readme
