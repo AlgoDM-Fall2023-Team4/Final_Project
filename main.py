@@ -89,21 +89,17 @@ def signin():
         else:
             st.error("Something went wrong")
 
-
-# Define the Streamlit pages
 pages = {
     "HOME": home,
     "DISPLAY IMAGE": display_images
 }
 
-
-# Define the Streamlit app
 def main():
     if "go_to_display_image" not in st.session_state:
         st.session_state.go_to_display_image = False
 
     st.set_page_config(
-        page_title="NOAA GOES Date", page_icon=":satellite:", layout="wide"
+        page_title="Art Style Recommendation", page_icon=":art:", layout="wide"
     )
     st.sidebar.title("Navigation")
 
