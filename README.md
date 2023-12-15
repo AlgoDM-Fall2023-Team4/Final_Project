@@ -5,7 +5,7 @@
 ##### Image Source: [StudioBinder]
 ----- 
 
-[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](http://34.125.146.230:8501/)
+[![Streamlit - Live Application](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)](http://34.125.146.230:8501/)
 
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white)](http://34.125.146.230:8051/docs)
 
