@@ -48,7 +48,7 @@ def signup():
     email = st.text_input("Enter Email")
     password = st.text_input("Enter password", type="password")
     selected_genres = st.multiselect("Select preferred art genres:", genre_list, max_selections=3)
-    if st.button("Sign up"):
+    if name and email and password and selected_genres and st.button("Sign up"):
         user = {"name": name, "password": password, "email": email, "preferences": selected_genres}
         response = requests.post(f"{PREFIX}/signup", json=user)
 
@@ -69,7 +69,7 @@ def signin():
     email = st.text_input("Enter email")
     password = st.text_input("Enter password", type="password")
 
-    if st.button("Sign in"):
+    if email and password and st.button("Sign in"):
         user = {
             "email": email,
             "password": password
