@@ -54,11 +54,11 @@ def display_images(token: str):
     # st.write(filename)
 
     st.image(image, width=800)
-    st.write(":blue[Artist Name :] ", df_cleaned[df_cleaned["filename"] == filename]['artist'].iloc[0])
-    st.write(":blue[Title :] ", df_cleaned[df_cleaned["filename"] == filename]['title'].iloc[0])
-    st.write(":blue[Genre :] ", df_cleaned[df_cleaned["filename"] == filename]['genre'].iloc[0])
-    st.write(":blue[Date :] ", df_cleaned[df_cleaned["filename"] == filename]['date'].iloc[0])
-    st.write(":blue[Style :] ", df_cleaned[df_cleaned["filename"] == filename]['style'].iloc[0])
+    st.subheader(":blue[Artist Name :] " + str(df_cleaned[df_cleaned["filename"] == filename]['artist'].iloc[0]))
+    st.subheader(":blue[Title :] " + str( df_cleaned[df_cleaned["filename"] == filename]['title'].iloc[0]))
+    st.subheader(":blue[Genre :] " + str( df_cleaned[df_cleaned["filename"] == filename]['genre'].iloc[0]))
+    st.subheader(":blue[Date :] " + str( df_cleaned[df_cleaned["filename"] == filename]['date'].iloc[0]))
+    st.subheader(":blue[Style :] " + str( df_cleaned[df_cleaned["filename"] == filename]['style'].iloc[0]))
 
     with st.expander('Similar Images:'):
         image_embeddings = compute_clip_features(image)
